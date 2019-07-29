@@ -75,6 +75,9 @@ model_validation.plot_confusion_matrix(test_labels["airline_sentiment"],forest_o
 model_validation.plot_confusion_matrix(test_labels["airline_sentiment"], forest_output["airline_sentiment"], classes=["negative","neutral","positive"], normalize=True,
                       title='Random Forest Normalized Confusion Matrix')
 
+model_validation.plot_result_comparison(test_labels["airline_sentiment"],forest_output["airline_sentiment"], classes=["Negative","Neutral","Positive"],
+                      title='Predicted vs Actual Sentiment Classification')
+
 # Printing classification report and accuracy score to console
 print("Random Forest: ",classification_report(test_labels["airline_sentiment"],forest_output["airline_sentiment"]))  
 print("Random Forest: ",accuracy_score(test_labels["airline_sentiment"],forest_output["airline_sentiment"]))  

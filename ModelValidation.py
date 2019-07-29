@@ -67,3 +67,25 @@ class ModelValidation:
     fig.tight_layout()
     plt.show()
     return ax
+
+  def plot_result_comparison(self, y_true, y_pred, classes, title):
+    barWidth = 0.25
+    y_true_count = y_true.value_counts()
+    y_pred_count = y_pred.value_counts()
+    r1 = np.arange(len(classes))
+    r2 = [x + barWidth for x in r1]
+
+    # Make the plot
+    plt.bar(r1,y_true_count,width=barWidth,edgecolor='white',label='True')
+    plt.bar(r2,y_pred_count,width=barWidth,edgecolor='white',label='Predicted')
+    y_true_count = y_true.value_counts()
+    
+    plt.xlabel('Sentiment Labels')
+    plt.ylabel('Label Count')
+    plt.title(title)
+    plt.xticks([r + barWidth for r in range(len(classes))], classes)
+    # Create legend & Show graphic
+    plt.legend()
+    plt.savefig('figures/result_comparison.png')
+    plt.show()
+
