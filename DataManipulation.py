@@ -1,4 +1,3 @@
-from BagOfWords import BagOfWords
 from bs4 import BeautifulSoup 
 import re
 import numpy as np
@@ -132,7 +131,7 @@ class DataManipulation:
 		plt.xticks(rotation='vertical',fontsize=15)
 		plt.ylabel('Frequency',fontsize=18)
 		plt.xlabel('Words',fontsize=18)
-		plt.savefig('figures/frequency_plot.png')
+		plt.savefig('figures/bar.png')
 		plt.tight_layout()
 		plt.show()
 
